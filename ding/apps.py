@@ -5,4 +5,8 @@ class DingConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'ding'
 
-        # pass
+    def ready():
+        print('ready')
+        from ding.models import DingGroup
+
+        # from ding.models import DingGroup

@@ -131,7 +131,6 @@ class Handler:
             print('network error:', response.status_code)
 
 if __name__ == '__main__':
-    print('hello')
     username = 'Yingtianwanwu'
     password = 'yingtianwanwu0122'
     base_url = 'http://helmenyun.cn/index.php'
@@ -144,7 +143,7 @@ if __name__ == '__main__':
     while True:  
         now = datetime.now()
         last_day = datetime.now() 
-        first_day = last_day + dt.timedelta(minutes=-6000)
+        first_day = last_day + dt.timedelta(minutes=-6)
         first_day_strf = first_day.strftime("%Y%m%d%H%M%S")
         last_day_strf = last_day.strftime("%Y%m%d%H%M%S")
         print(first_day_strf)

@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 
+# 把英文改为中文
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -29,7 +30,7 @@ HUEY = {
     # 'connection': {'connection_pool': pool},
     # 'consumer': {'workers': 1, 'worker_type': 'greenlet'},
     'consumer': {
-        'workers': 3,
+        'workers': 10,
         'periodic': True,
     },
     'immediate': False
@@ -44,9 +45,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 # huey
 # settings.py
 INSTALLED_APPS = [
+    'ding',
     'simpleui',
     'rest_framework',
-    'ding',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -92,8 +93,12 @@ WSGI_APPLICATION = 'simple.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql', 
+        'NAME': 'simple',
+        'USER': 'root',
+        'PASSWORD': '12345678',
+        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+        'PORT': '3306',
     }
 }
 
@@ -120,9 +125,12 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+# LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+# TIME_ZONE = 'UTC'
+LANGUAGE_CODE = 'zh-hans'
+# 把国际时区改为中国时区
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 

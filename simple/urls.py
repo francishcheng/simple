@@ -19,6 +19,6 @@ from django.urls import path, include
 from ding import urls as ding_urls
 urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
-    path('admin/ding/', include(ding_urls)),
+    # path('admin/ding/', include(ding_urls)),
     path('admin/', admin.site.urls),
 ]

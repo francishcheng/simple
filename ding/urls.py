@@ -6,7 +6,7 @@ from ding.viewsets import DingGroupViewSets
 
 
 router = routers.SimpleRouter(trailing_slash=False)
-router.register("dinggroup", DingGroupViewSets)
+router.register("dinggroupsss", DingGroupViewSets)
 
 
 urlpatterns = [
